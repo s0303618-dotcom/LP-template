@@ -1,0 +1,992 @@
+@charset "UTF-8";
+
+/* CSS Document */
+
+/* http://meyerweb.com/eric/tools/css/reset/
+v2.0 | 20110126
+License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+main {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  /* border-collapse: collapse; */ /* border-spacing: 0; */
+}
+
+/* アニメーション
+-------------------------------------*/
+/* ScrollTrigger マーカーを強制的に非表示にする */
+.gsap-marker-scroller-end,
+.gsap-marker-start,
+.gsap-marker-end,
+.gsap-marker-scroller-start {
+  display: none !important;
+}
+
+/*fadein*/
+.animated__fadeIn {
+  opacity: 0;
+  translate: 0 40px;
+  transition:
+    opacity 0.8s ease,
+    translate 0.8s ease;
+}
+
+.animated__fadeIn.js-show {
+  opacity: 1;
+  translate: 0 0;
+}
+
+
+@media screen and (min-width: 768px), print {
+  /* base */
+  body {
+    background-color: #fff;
+    font-size: 16px;
+    overflow-x: hidden;
+    line-height: 1.6;
+    letter-spacing: 0.8px;
+    max-width: 1920px;
+    width: 100%;
+    margin-inline: auto;
+    color: #1a1a1a;
+  }
+
+  /* header
+-------------------------------------*/
+  header {
+    position: relative;
+    max-width: 1920px;
+    width: 100%;
+    margin-inline: auto;
+    z-index: 10;
+  }
+
+  .l-header .l-header__inner {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    padding: clamp(1rem, 2.08vw, 2.5rem);
+  }
+
+  .l-header .l-header__logo a {
+    display: block;
+  }
+
+  .l-header .l-header__logo a img {
+    width: clamp(7.5rem, 4.167rem + 6.94vw, 12.5rem);
+    height: auto;
+  }
+
+  .l-header .l-header__btn {
+    position: relative;
+    top: 19px;
+    top: clamp(0.375rem, -0.167rem + 1.13vw, 1.188rem);
+  }
+
+  .l-header .l-header__btn a {
+    background: #b5002b;
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 16px;
+    font-size: clamp(0.75rem, 0.583rem + 0.35vw, 1rem);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    line-height: 1.1875;
+    padding: 17px 77px;
+    text-align: center;
+  }
+
+  /* side-fix
+-------------------------------------*/
+  .side-fix {
+    position: fixed;
+    bottom: 20px;
+    z-index: 60;
+    display: none;
+  }
+
+  .side-fix .side-fix__items {
+    display: grid;
+    gap: 0 40px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-inline: auto;
+    width: min(95%, 1160px);
+  }
+
+  .side-fix .side-fix__item a {
+    display: block;
+  }
+
+  .side-fix .side-fix__item a img {
+    height: auto;
+    width: 100%;
+  }
+
+  /* footer
+-------------------------------------*/
+.l-footer .l-footer__inner {
+    padding-block: 140px 160px;
+  }
+
+  .l-footer .l-footer__logo {
+    margin-bottom: 36px;
+  }
+
+  .l-footer .l-footer__logo a {
+    display: block;
+    text-align: center;
+  }
+
+  .l-footer .l-footer__logo a img {
+    height: auto;
+    width: 260px;
+  }
+
+  .l-footer .l-footer__pagetop {
+    padding-inline: 0 10px;
+    text-align: right;
+  }
+
+  .l-footer .l-footer__pagetop a {
+    display: block;
+  }
+
+  .l-footer .l-footer__pagetop a img {
+    height: auto;
+    width: 60px;
+  }
+
+  /* copyright
+-------------------------------------*/
+  .copyright {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    line-height: 2.2857142857;
+    text-align: center;
+    margin-bottom: 43px;
+  }
+
+  /*pc・タブレットcss*/
+  /*pc_defaultset*/
+  .pc {
+    display: block !important;
+  }
+  /*pcのみ表示ブロック*/
+  .pc2 {
+    display: inline-block !important;
+  }
+  /*pcのみ表示ブロック*/
+  .sp,
+  .sp2 {
+    display: none !important;
+  }
+  /*スマホのみ表示ブロック*/
+  .h_menu {
+    display: none;
+  }
+  /*スマホ用ヘッダ*/
+  .sp-header {
+    display: none;
+  }
+  /*スマホ用メニュー*/
+  #sp-global-nav {
+    display: none;
+  }
+  /*スマホ用メニュー*/
+  .sp-fix-list {
+    display: none;
+  }
+  /* Antialiasing ※任意　*/
+
+  html {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: none;
+    overflow-x: hidden;
+  }
+
+  /* WEB FONTs 游ゴシックかすれ予防*/
+  @font-face {
+    font-family: "Yu Gothic";
+    src: local("Yu Gothic Medium");
+    font-weight: 100;
+  }
+  @font-face {
+    font-family: "Yu Gothic";
+    src: local("Yu Gothic Medium");
+    font-weight: 200;
+  }
+  @font-face {
+    font-family: "Yu Gothic";
+    src: local("Yu Gothic Medium");
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: "Yu Gothic";
+    src: local("Yu Gothic Medium");
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "Yu Gothic";
+    src: local("Yu Gothic Bold");
+    font-weight: bold;
+  }
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: local("Helvetica Neue Regular");
+    font-weight: 100;
+  }
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: local("Helvetica Neue Regular");
+    font-weight: 200;
+  }
+  .f-min {
+    font-family:
+      "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝",
+      "MS PMincho", "MS 明朝", serif;
+  }
+  .f-min-02 {
+    font-family:
+      "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Sawarabi Mincho",
+      "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  }
+  .f-gothic {
+    font-family:
+      -apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック",
+      "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro",
+      Verdana, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  }
+  .f-noto {
+    font-family: "Noto Sans JP", sans-serif;
+  }
+
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+  img {
+    vertical-align: bottom;
+  }
+  a {
+    text-decoration: none;
+    color: #090909;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .nobd a:hover {
+    text-decoration: none !important;
+  }
+
+  /* リンク透明 */
+  a img:hover {
+    -ms-filter: "alpha( opacity=80 )";
+    filter: alpha(opacity=80);
+    opacity: 0.8;
+  }
+  /* リンク透明にしない */
+  .noop a img:hover {
+    -ms-filter: "alpha( opacity=100 )";
+    filter: alpha(opacity=100);
+    opacity: 1;
+  }
+  /*---------------------------------------- 　　外部サービス ----------------------------------------*/
+  /* ggmap */
+  /* <div class="ggmap">iframeのコピーしたコード</div> */
+  .ggmap {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+  }
+  .ggmap iframe,
+  .ggmap object,
+  .ggmap embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  /* <div class="youtube"><iframe  src="youtubeのURL?rel=0" frameborder="0" allowfullscreen></iframe></div> */
+  .youtube {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+  }
+  .youtube iframe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  /*---------------------------------------- 　　webフォント（サーバー置き）　 ----------------------------------------*/
+  @font-face {
+    font-family: "jp-sttl01";
+    src: url("../font/.eot");
+    /* IE9以上用 */
+    src:
+      url("../font/bokutachi.eot?#iefix") format("embedded-opentype"),
+      url("../font/NotoSansCJKjp-Medium.woff") format("woff"),
+      url("../font/NotoSansCJKjp-Medium.woff") format("woff");
+    /* iOS, Android用 */
+    /* 念の為指定しておきます */
+    font-weight: normal;
+    /* 念の為指定しておきます */
+    font-style: normal;
+    vertical-align: top;
+    margin: 0px;
+    padding: 0px;
+  }
+  .myWebFontClass {
+    font-family: "jp-sttl01";
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  html {
+    overflow-x: hidden;
+  }
+  body {
+    overflow: visible;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  body {
+    overflow: hidden;
+    font-size: 3.6vw;
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    line-height: 1.6;
+    color: #1a1a1a;
+  }
+  .pc,
+  .pc2 {
+    display: none !important;
+  }
+  /*pcのみ表示ブロック*/
+  .sp {
+    display: block !important;
+  }
+  /*スマホのみ表示ブロック*/
+  .sp2 {
+    display: inline-block !important;
+  }
+  /*スマホのみ表示ブロック*/
+  .no-br {
+    display: none;
+  }
+  /*スマホでbrを解除したい場合に使用*/
+  .sp_display_block {
+    display: block !important;
+  }
+  /*スマホでflexboxを解除したい場合等に使用*/
+  .pc-menu {
+    display: none;
+  }
+
+  .side-fix {
+    display: none;
+  }
+
+  #pc-menu-open {
+    display: none;
+  }
+  #g-nav {
+    display: none;
+  }
+
+  /* header
+-------------------------------------*/
+  header {
+    position: relative;
+    max-width: 100vw;
+    margin: 0 auto;
+  }
+  .l-header .l-header__inner {
+    padding-block: 3.382vw 0;
+    padding-inline: 3.865vw 0;
+  }
+
+  /* sp-header
+-------------------------------------*/
+  .sp-header {
+    margin-bottom: -14.01vw;
+    padding-block: 2.382vw 0;
+    padding-inline: 3.865vw 0;
+    position: relative;
+    z-index: 10;
+  }
+
+  .sp-header .h-logo a {
+    display: block;
+  }
+
+  .sp-header .h-logo a img {
+    height: auto;
+    width: 23.188vw;
+  }
+
+  .sp-header .h-menu {
+    position: fixed;
+    right: 3.865vw;
+    top: 1.932vw;
+  }
+
+  .sp-header .h-menu img {
+    border-radius: 1.208vw;
+    height: auto;
+    overflow: hidden;
+    width: 12.077vw;
+  }
+
+  /* sp-global-nav
+-------------------------------------*/
+  #sp-global-nav .open-color-Box__btn {
+    margin-bottom: 15.459vw;
+    margin-inline: auto;
+    width: min(95%, 89.270531401vw);
+  }
+
+  #sp-global-nav .open-color-Box__items {
+    display: grid;
+    gap: 0 2.415vw;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #sp-global-nav .open-color-Box__item a {
+    display: block;
+  }
+
+  #sp-global-nav .open-color-Box__item a img {
+    border-radius: 2.415vw;
+    height: auto;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  #sp-global-nav .open-color-Box__home {
+    border-top: 1px solid #d4d4d4;
+    margin-inline: auto;
+    width: min(95%, 92.270531401vw);
+  }
+
+  #sp-global-nav .open-color-Box__home a {
+    display: block;
+    font-size: 3.865vw;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    line-height: 1.1875;
+    padding-block: 4.797vw;
+    padding-inline: 4.831vw 0;
+  }
+
+  #sp-global-nav .open-color-Box__list {
+    border-top: 1px solid #d4d4d4;
+    font-size: 3.865vw;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    line-height: 1.1875;
+    margin-inline: auto;
+    width: min(95%, 92.270531401vw);
+  }
+
+  #sp-global-nav .open-color-Box__list .list li {
+    border-top: 1px solid #d4d4d4;
+  }
+
+  #sp-global-nav .open-color-Box__list .list li:last-child {
+    border-bottom: 1px solid #d4d4d4;
+  }
+
+  #sp-global-nav .open-color-Box__list .list li a {
+    display: block;
+    padding-block: 4.797vw;
+    padding-inline: 4.831vw 0;
+    position: relative;
+  }
+
+  #sp-global-nav .open-color-Box__list .list li a.plus {
+    padding-block: 4.797vw;
+  }
+
+  #sp-global-nav .open-color-Box__list .list li a::after {
+    content: ">";
+    font-size: 3.865vw;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    line-height: 1.1875;
+    position: absolute;
+    right: 4.831vw;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  #sp-global-nav .open-color-Box__list .list li a.plus::after {
+    content: "+";
+    font-size: 3.865vw;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    line-height: 1.1875;
+    position: absolute;
+    right: 4.831vw;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  #sp-global-nav .open-color-Box__list .list li .sub {
+    padding-block: 0 3.797vw;
+    margin-block: -1vw 0;
+  }
+
+  #sp-global-nav .open-color-Box__list .list li .sub li {
+    border: none;
+  }
+
+  #sp-global-nav .open-color-Box__list .list li .sub li a {
+    display: block;
+    padding-block: 1.5vw;
+    padding-inline: 9.662vw 0;
+  }
+
+  /* sp-global-nav
+-------------------------------------*/
+  nav#sp-global-nav {
+  }
+
+  nav#sp-global-nav .h-logo {
+    margin-bottom: 15.459vw;
+    padding-block: 2.382vw 0;
+    padding-inline: 3.865vw 0;
+  }
+  nav#sp-global-nav .h-logo img {
+    width: 23.188vw;
+    height: auto;
+  }
+  nav#sp-global-nav {
+    font-size: 3.8vw;
+    z-index: 999;
+    overflow: scroll;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    box-sizing: border-box;
+    background: #fff;
+  }
+  nav#sp-global-nav .open-close-01 {
+    position: fixed;
+    top: 1.932vw;
+    right: 3.865vw;
+    z-index: 998;
+  }
+  nav#sp-global-nav .open-close-01 img {
+    height: auto;
+    width: 12.077vw;
+    border-radius: 1.208vw;
+    overflow: hidden;
+  }
+
+  /* side-fix
+-------------------------------------*/
+  .side-fix {
+    display: none !important;
+  }
+
+  .sp-fix-list {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 96;
+    background: #ffffff;
+    box-shadow: 0 -6px 12px -4px rgba(0, 0, 0, 0.08);
+    padding: 5.797vw 5.314vw;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 2.415vw;
+  }
+
+  .sp-fix-list .icon {
+  }
+
+  .sp-fix-list .icon a {
+    display: block;
+  }
+
+  .sp-fix-list .icon a img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* footer
+  -------------------------------------*/
+  .l-footer .l-footer__inner {
+    padding-block: 19.324vw 27.778vw;
+  }
+
+  .l-footer .l-footer__logo {
+    margin-bottom: 3.005vw;
+  }
+
+  .l-footer .l-footer__logo a {
+    display: block;
+    text-align: center;
+  }
+
+  .l-footer .l-footer__logo a img {
+    height: auto;
+    width: 33.816vw;
+  }
+
+  .l-footer .l-footer__pagetop {
+    padding-inline: 0;
+    text-align: right;
+  }
+
+  .l-footer .l-footer__pagetop a {
+    display: block;
+  }
+
+  .l-footer .l-footer__pagetop a img {
+    height: auto;
+    width: 15.459vw;
+  }
+
+  /* copyright
+-------------------------------------*/
+  .copyright {
+    display: block;
+    font-size: 2.899vw;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    line-height: 2.6666666667;
+    margin-bottom: 23.188vw;
+    text-align: center;
+  }
+
+  .fit img {
+    object-fit: cover;
+  }
+  .wysiwyg img {
+    width: auto !important;
+    height: auto !important;
+  }
+  html {
+    -webkit-font-smoothing: subpixel-antialiased;
+    -moz-osx-font-smoothing: none;
+    overflow-x: hidden;
+  }
+  /* WEB FONTs 游ゴシックかすれ予防*/
+  @font-face {
+    font-family: "Yu Gothic";
+    src: local("Yu Gothic Medium");
+    font-weight: 100;
+  }
+  @font-face {
+    font-family: "Yu Gothic";
+    src: local("Yu Gothic Medium");
+    font-weight: 200;
+  }
+  @font-face {
+    font-family: "Yu Gothic";
+    src: local("Yu Gothic Medium");
+    font-weight: 300;
+  }
+  @font-face {
+    font-family: "Yu Gothic";
+    src: local("Yu Gothic Medium");
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: "Yu Gothic";
+    src: local("Yu Gothic Bold");
+    font-weight: bold;
+  }
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: local("Helvetica Neue Regular");
+    font-weight: 100;
+  }
+  @font-face {
+    font-family: "Helvetica Neue";
+    src: local("Helvetica Neue Regular");
+    font-weight: 200;
+  }
+  .f-min {
+    font-family:
+      "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝",
+      "MS PMincho", "MS 明朝", serif;
+  }
+  .f-min-02 {
+    font-family:
+      "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Sawarabi Mincho",
+      "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;
+  }
+  .f-gothic {
+    font-family:
+      -apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック",
+      "Yu Gothic", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro",
+      Verdana, Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  }
+  .f-noto {
+    font-family: "Noto Sans JP", sans-serif;
+  }
+
+  *:focus {
+    outline: none !important;
+  }
+  a {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
+  }
+
+  body {
+    -webkit-text-size-adjust: 100%;
+  }
+  img {
+    vertical-align: bottom;
+    max-width: 100%;
+    height: auto;
+  }
+  a {
+    text-decoration: none;
+    color: #090909;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .nobd a:hover {
+    text-decoration: none !important;
+  }
+  .clearfix {
+    zoom: 1;
+  }
+  .clearfix:after {
+    display: block;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+    line-height: 0;
+    content: ".";
+  }
+
+  /* img-block */
+  /* アンカーリンク調整 */
+  .hideAnchor {
+    display: block;
+    height: 0;
+    overflow: hidden;
+    text-indent: -9999px;
+    margin-top: -2vw;
+    padding-bottom: 2vw;
+  }
+  /* スクロール縦 */
+  .scroll-y {
+    box-sizing: border-box;
+    overflow-y: scroll;
+    transform: translateZ(0);
+  }
+  /* リンク透明 */
+  a img:hover {
+    -ms-filter: "alpha( opacity=80 )";
+    filter: alpha(opacity=80);
+    opacity: 0.8;
+  }
+  /* リンク透明にしない */
+  .noop a img:hover {
+    -ms-filter: "alpha( opacity=100 )";
+    filter: alpha(opacity=100);
+    opacity: 1;
+  }
+  /*---------------------------------------- 　　外部サービス ----------------------------------------*/
+  /* ggmap */
+  /* <div class="ggmap">iframeのコピーしたコード</div> */
+  .sp-ggmap {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 5vw;
+    height: 0;
+    overflow: hidden;
+  }
+  .sp-ggmap iframe,
+  .sp-ggmap object,
+  .sp-ggmap embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  /* <div class="youtube"><iframe  src="youtubeのURL?rel=0" frameborder="0" allowfullscreen></iframe></div> */
+  .youtube {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+  }
+  .youtube iframe {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /*---------------------------------------- 　　webフォント（サーバー置き）　 ----------------------------------------*/
+  @font-face {
+    font-family: "jp-sttl01";
+    /* お好きな名前にしましょう */
+    src: url("../font/.eot");
+    /* IE9以上用 */
+    src:
+      url("../font/bokutachi.eot?#iefix") format("embedded-opentype"),
+      url("../font/NotoSansCJKjp-Medium.woff") format("woff"),
+      url("../font/NotoSansCJKjp-Medium.woff") format("woff");
+    /* iOS, Android用 */
+    /* 念の為指定しておきます */
+    font-weight: normal;
+    /* 念の為指定しておきます */
+    font-style: normal;
+    vertical-align: top;
+    margin: 0px;
+    padding: 0px;
+  }
+  .myWebFontClass {
+    font-family: "jp-sttl01";
+  }
+}
+@media screen and (max-height: 450px) {
+  /* 高さ450px以下の場合 andoroidのフォーム対策 ストーカーバナー用　*/
+  .sp-fix-list {
+    display: none;
+  }
+}

@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <!-- Google Tag Manager（head用）をここに挿入 -->
+  <!--<?php $outerfile = $_SERVER['DOCUMENT_ROOT'] . '/page/gtmhead.html.twig';if(file_exists($outerfile)) {require_once $outerfile;} ?>-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ページタイトル｜サイト名</title>
+  <meta name="description" content="ページの説明文をここに記述します。">
+  <link rel="canonical" href="https://example.com/">  <!-- ページのURLを設定 -->
+  <link rel="icon" type="image/png" href="images/favicon.png" sizes="64x64">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png" sizes="180x180">
+
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- OGP / SNS（ページのタイトル・説明文・画像を設定） -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:url" content="https://example.com/">
+  <meta property="og:site_name" content="サイト名">
+  <meta property="og:title" content="ページタイトル｜サイト名">
+  <meta property="og:description" content="ページの説明文をここに記述します。">
+  <meta property="og:image" content="https://example.com/images/ogp.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Google Fonts（必要なフォントのみ使用すること） -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap">
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&display=swap"> -->
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap"> -->
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap"> -->
+  <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@400;500;600;700&display=swap"> -->
+  <!-- Font Awesome（必要な時のみ使用） -->
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous"> -->
+  <!-- CSS -->
+  <link href="css/slick.css" rel="stylesheet">
+  <link href="css/common.css" rel="stylesheet">
+  <link href="css/page-top.css" rel="stylesheet">
+</head>
+
+<body id="index" class="f-noto">
+  <!-- Google Tag Manager（body用）をここに挿入 -->
+  <!--<?php $outerfile = $_SERVER['DOCUMENT_ROOT'] . '/page/gtmbody.html.twig';if(file_exists($outerfile)) {require_once $outerfile;} ?>-->
+
+  
+  <!--　 header(PC/SP共通) -->
+  <header class="header">
+    <div class="header__inner">
+      <div class="logo">
+        <a href="https://www.carenet.com/login.php?RedirectUrl=https%3A%2F%2Fwww.carenet.com%2F%3Fkeiro%3Dcom_medicinelp">
+          <img src="images/common/logo.jpg" alt="WEBサイト名が入ります">
+        </a>
+      </div>
+      <button class="header__menu-open menu-open" type="button" aria-label="メニューを開く">
+        <img src="images/common/menu.jpg" alt="メニューを開くボタン">
+      </button>
+    </div>
+  </header>
+
+
+  <!-- PC modal-menu（全画面メニュー） -->
+  <div id="pc-modal-menu" aria-label="グローバルメニュー">
+    <div class="pc-modal-menu__head">
+      <div class="logo">
+        <a href="#"><img src="images/common/logo.jpg" alt="WEBサイト名が入ります"></a>
+      </div>
+      <div class="closebtn">
+        <img src="images/common/close.jpg" alt="メニューを閉じるボタン">
+      </div>
+    </div>
+    <div class="pc-modal-menu__body">
+      <nav class="pc-modal-menu__list">
+        <ul class="list">
+          <li><a href="#reason">選ばれる３つの理由</a></li>
+          <li><a href="#contents">豊富なコンテンツ</a></li>
+          <li><a href="#point">サービスのポイント</a></li>
+          <li><a href="#voice">お客様の声</a></li>
+          <li><a href="#about">私たちについて</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- SP modal-menu（全画面メニュー） -->
+  <div id="sp-modal-menu">
+    <div class="logo">
+      <a href="/">
+        <img src="images/common/logo.jpg" alt="Care Net">
+      </a>
+    </div>
+    <div class="closebtn">
+      <img src="images/common/close.jpg" alt="メニューを閉じる">
+    </div>
+    <div class="sp-modal-menu__body">
+      <nav class="sp-modal-menu__list">
+        <ul class="list">
+          <li><a href="#reason">選ばれる３つの理由</a></li>
+          <li><a href="#contents">豊富なコンテンツ</a></li>
+          <li><a href="#point">サービスのポイント</a></li>
+          <li><a href="#voice">お客様の声</a></li>
+          <li><a href="#about">私たちについて</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+
+  <main>
+    <!-- mv -->
+    <section class="mv">
+      <div class="mv__inner">
+        <div class="mv__slider">
+          <div class="mv__slide">
+            <picture>
+              <source srcset="images/index/main-visual01_sp.jpg" media="(max-width: 767px)">
+              <img src="images/index/main-visual01.jpg" alt="メインビジュアル1">
+            </picture>
+          </div>
+          <div class="mv__slide">
+            <picture>
+              <source srcset="images/index/main-visual02_sp.jpg" media="(max-width: 767px)">
+              <img src="images/index/main-visual02.jpg" alt="メインビジュアル2">
+            </picture>
+          </div>
+          <div class="mv__slide">
+            <picture>
+              <source srcset="images/index/main-visual03_sp.jpg" media="(max-width: 767px)">
+              <img src="images/index/main-visual03.jpg" alt="メインビジュアル3">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- anchor-nav -->
+    <div class="anchor-nav">
+      <div class="inner">
+        <ul class="list">
+          <li><a href="#link01">活用される理由</a></li>
+          <li><a href="#link02">豊富なコンテンツ</a></li>
+          <li><a href="#link07">お得な活用術</a></li>
+          <li><a href="#link08">利用者の声</a></li>
+        </ul>
+      </div>
+    </div>
+
+
+    <!-- reason -->
+    <section id="reason" class="reason">
+      <div class="inner animated__fadeIn">
+        <div class="c-title-wrap">
+          <p class="c-title-en">REASON</p>
+          <h2 class="c-title">選ばれる３つの理由</h2>
+        </div>
+        <ul class="list">
+          <li>
+            <div class="reason__item-image">
+              <img src="images/common/test-img_800*800.jpg" alt="">
+            </div>
+            <h3 class="reason__item-ttl">理由１のタイトルが入ります</h3>
+            <p class="reason__item-txt">
+              理由１の説明文が入ります。理由１の説明文が入ります。理由１の説明文が入ります。理由１の説明文が入ります。理由１の説明文が入ります。理由１の説明文が入ります。
+            </p>
+          </li>
+
+          <li>
+            <div class="reason__item-image">
+              <img src="images/common/test-img_800*800.jpg" alt="">
+            </div>
+            <h3 class="reason__item-ttl">理由２のタイトルが入ります</h3>
+            <p class="reason__item-txt">
+              理由２の説明文が入ります。理由２の説明文が入ります。理由２の説明文が入ります。理由２の説明文が入ります。理由２の説明文が入ります。理由２の説明文が入ります。
+            </p>
+          </li>
+
+          <li>
+            <div class="reason__item-image">
+              <img src="images/common/test-img_800*800.jpg" alt="">
+            </div>
+            <h3 class="reason__item-ttl">理由３のタイトルが入ります</h3>
+            <p class="reason__item-txt">
+              理由３の説明文が入ります。理由３の説明文が入ります。理由３の説明文が入ります。理由３の説明文が入ります。理由３の説明文が入ります。理由３の説明文が入ります。
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- contents -->
+    <section id="contents" class="contents">
+      <div class="inner animated__fadeIn">
+        <div class="c-title-wrap">
+          <p class="c-title-en">CONTENTS</p>
+          <h2 class="c-title">豊富なコンテンツ</h2>
+        </div>
+        <p class="c-lead">
+          目的や場面に合わせて選べる、<br class="sp">さまざまなコンテンツをご用意しています。<br>
+          気になるテーマから、<br class="sp">お好みの形式でご覧ください。
+        </p>
+        
+        <ul class="list animated__fadeIn">
+          <li>
+            <div class="item-image">
+              <img src="images/common/test-img_800*800.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-ttl">h3タイトルが入ります。</h3>
+              <p class="item-txt">
+                見出しに続く説明文が入ります。見出しに続く説明文が入ります。見出しに続く説明文が入ります。見出しに続く説明文が入ります。見出しに続く説明文が入ります。見出しに続く説明文が入ります。
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div class="item-image">
+              <img src="images/common/test-img_800*800.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-ttl">h3タイトルが入ります。</h3>
+              <p class="item-txt">
+                見出しに続く説明文が入ります。見出しに続く説明文が入ります。見出しに続く説明文が入ります。見出しに続く説明文が入ります。見出しに続く説明文が入ります。見出しに続く説明文が入ります。
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div class="item-image">
+              <img src="images/common/test-img_800*800.jpg" alt="">
+            </div>
+            <div class="item-body">
+              <h3 class="item-ttl">h3タイトルが入ります。</h3>
+              <p class="item-txt">
+                見出しに続く説明文が入ります。見出しに続く説明文が入ります。見出しに続く説明文が入ります。見出しに続く説明文が入ります。見出しに続く説明文が入ります。見出しに続く説明文が入ります。
+              </p>
+            </div>
+          </li>
+        </ul>
+
+        <!-- loop-img -->
+        <div class="contents__loop">
+          <div class="contents__loop-wrap">
+            <picture>
+              <source media="(max-width: 767px)" srcset="images/index/loop-img_sp.png">
+              <img src="images/index/loop-img.png" alt="コンテンツロゴがスライダーで流れている">
+            </picture>
+            <picture>
+              <source media="(max-width: 767px)" srcset="images/index/loop-img_sp.png">
+              <img src="images/index/loop-img.png" alt="コンテンツロゴがスライダーで流れている">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- point -->
+    <section id="point" class="point">
+      <div class="inner animated__fadeIn">
+        <div class="c-title-wrap">
+          <p class="c-title-en">POINT</p>
+          <h2 class="c-title">サービスのポイント</h2>
+        </div>
+        <p class="c-lead">
+          本サービスの主な特長を、<br class="sp">わかりやすくまとめました。<br>
+          以下のポイントをご確認ください。
+        </p>
+        <ul class="point__merit-list">
+          <li class="point__merit-item">
+            <div class="en">
+              <img src="images/index/merit01.svg" alt="MERIT01">
+            </div>
+            <h3 class="point__merit-ttl">ポイント１のタイトルが<br>入ります</h3>
+            <div class="img">
+              <img src="images/index/merit01_icon.svg" alt="">
+            </div>
+          </li>
+
+          <li class="point__merit-item">
+            <div class="en">
+              <img src="images/index/merit02.svg" alt="MERIT02">
+            </div>
+            <h3 class="point__merit-ttl">ポイント２のタイトルが<br>入ります</h3>
+            <div class="img">
+              <img src="images/index/merit02_icon.svg" alt="">
+            </div>
+          </li>
+
+          <li class="point__merit-item">
+            <div class="en">
+              <img src="images/index/merit03.svg" alt="MERIT03">
+            </div>
+            <h3 class="point__merit-ttl">ポイント３のタイトルが<br>入ります</h3>
+            <div class="img">
+              <img src="images/index/merit03_icon.svg" alt="">
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- voices -->
+    <section id="voice" class="voice">
+      <div class="inner l-voices animated__fadeIn">
+        <div class="c-title-wrap">
+          <p class="c-title-en">VOICES</p>  
+          <h2 class="c-title">お客様の声</h2>
+        </div>
+        <ul class="voice__list">
+          <li class="voice__item">
+            <h3>お客様の声のタイトルが入ります</h3>
+            <p>お客様の声の本文が入ります。<span>強調したい箇所</span>のテキストが入ります。お客様の声の本文が入ります。</p>
+          </li>
+          <li class="voice__item">
+            <h3>お客様の声のタイトルが入ります</h3>
+            <p>お客様の声の本文が入ります。<span>強調したい箇所</span>のテキストが入ります。お客様の声の本文が入ります。</p>
+          </li>
+          <li class="voice__item">
+            <h3>お客様の声のタイトルが入ります</h3>
+            <p>お客様の声の本文が入ります。<span>強調したい箇所</span>のテキストが入ります。お客様の声の本文が入ります。</p>
+          </li>
+          <li class="voice__item">
+            <h3>お客様の声のタイトルが入ります</h3>
+            <p>お客様の声の本文が入ります。<span>強調したい箇所</span>のテキストが入ります。お客様の声の本文が入ります。</p>
+          </li>
+          <li class="voice__item">
+            <h3>お客様の声のタイトルが入ります</h3>
+            <p>お客様の声の本文が入ります。<span>強調したい箇所</span>のテキストが入ります。お客様の声の本文が入ります。</p>
+          </li>
+          <li class="voice__item">
+            <h3>お客様の声のタイトルが入ります</h3>
+            <p>お客様の声の本文が入ります。<span>強調したい箇所</span>のテキストが入ります。お客様の声の本文が入ります。</p>
+          </li>
+          <li class="voice__item">
+            <h3>お客様の声のタイトルが入ります</h3>
+            <p>お客様の声の本文が入ります。<span>強調したい箇所</span>のテキストが入ります。お客様の声の本文が入ります。</p>
+          </li>
+          <li class="voice__item">
+            <h3>お客様の声のタイトルが入ります</h3>
+            <p>お客様の声の本文が入ります。<span>強調したい箇所</span>のテキストが入ります。お客様の声の本文が入ります。</p>
+          </li>
+          <li class="voice__item">
+            <h3>お客様の声のタイトルが入ります</h3>
+            <p>お客様の声の本文が入ります。<span>強調したい箇所</span>のテキストが入ります。お客様の声の本文が入ります。</p>
+          </li>
+          <li class="voice__item">
+            <h3>お客様の声のタイトルが入ります</h3>
+            <p>お客様の声の本文が入ります。<span>強調したい箇所</span>のテキストが入ります。お客様の声の本文が入ります。</p>
+          </li>
+          <li class="voice__item">
+            <h3>お客様の声のタイトルが入ります</h3>
+            <p>お客様の声の本文が入ります。<span>強調したい箇所</span>のテキストが入ります。お客様の声の本文が入ります。</p>
+          </li>
+          <li class="voice__item">
+            <h3>お客様の声のタイトルが入ります</h3>
+            <p>お客様の声の本文が入ります。<span>強調したい箇所</span>のテキストが入ります。お客様の声の本文が入ります。</p>
+          </li>
+          <li class="voice__item">
+            <h3>お客様の声のタイトルが入ります</h3>
+            <p>お客様の声の本文が入ります。<span>強調したい箇所</span>のテキストが入ります。お客様の声の本文が入ります。</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+    
+    <section id="about" class="about">
+      <div class="inner">
+        <div class="about__content animated__fadeIn">
+          <div class="about__content-left">
+            <div class="c-title-wrap">
+              <p class="c-title-en">ABOUT</p>
+              <h2 class="c-title">私たちについて</h2>
+            </div>
+            <p class="about__desc">
+              当サイトの概要文が入ります。当サイトの概要文が入ります。<br>
+              サービスの特長やミッションなど、紹介文をここに記載してください。<br>
+              テキストは必要に応じて行数を調整してください。
+            </p>
+          </div>
+
+          <div class="about__content-right">
+            <div class="ggmap"> 
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.831946134255!2d139.76448111262545!3d35.68113977247299!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bfbd89f700b%3A0x277c49ba34ed38!2z5p2x5Lqs6aeF!5e0!3m2!1sja!2sjp!4v1782195389468!5m2!1sja!2sjp"
+                width="600" height="450"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div> 
+            <div class="about__info-wrap">
+              <p class="about__address">〒000-0000<br>都道府県市区町村番地 建物名</p>
+              <p class="about__tel">TEL：00-0000-0000<br>FAX：00-0000-0000</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <!-- topへ戻る-->
+  <div class="page-top sp">
+    <div class="page-top__inner">
+      <a class="page-top__link" href="#">
+        <img src="images/common/sp-pagetop.png" alt="topへ戻る">
+        <p class="page-top__txt">TOPへ戻る</p>
+      </a>
+    </div>
+  </div>
+
+
+  <!-- footer -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__content">
+        <div class="footer__content-left">
+          <div class="footer__logo">
+            <a href="/">
+              <picture>
+                <source media="(max-width: 767px)" srcset="images/common/logo.jpg">
+                <img src="images/common/logo.jpg" alt="Care Net">
+              </picture>
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer__content-right">
+          <ul class="footer__link-list">
+            <li class="footer__link-item">
+              <a href="https://example.com/privacy/" target="_blank" rel="noopener noreferrer">個人情報保護法</a>
+            </li>
+            <li class="footer__link-item">
+              <a href="https://example.com/company/" target="_blank" rel="noopener noreferrer">運営会社</a>
+            </li>
+          </ul>
+
+          <ul class="footer__sns-list">
+            <li class="footer__sns-item">
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">
+                <img src="images/common/icon-facebook.png" alt="Facebookアイコン">
+              </a>
+            </li>
+            <li class="footer__sns-item">
+              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                <img src="images/common/icon-instagram.png" alt="Instagramアイコン">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <small class="copyright">Copyright(c)CareNet,Inc All Rights Reserved.</small>
+    </div>
+  </footer>
+
+
+  <!-- floating-cta -->
+  <div class="floating-cta">
+    <ul class="floating-cta__items">
+      <li class="floating-cta__item">
+        <a href="https://example.com/" target="_blank">
+          <picture>
+            <source media="(max-width: 767px)" srcset="images/common/floating-cta-btn_01_sp.jpg">
+            <img src="images/common/floating-cta-btn_01.jpg" alt="今すぐログインして利用する">
+          </picture>
+        </a>
+      </li>
+      <li class="floating-cta__item">
+        <a href="https://example.com" target="_blank">
+          <picture>
+            <source media="(max-width: 767px)" srcset="images/common/floating-cta-btn_02_sp.jpg">
+            <img src="images/common/floating-cta-btn_02.jpg" alt="ポイントを確認">
+          </picture>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+  <!-- JavaScript -->
+  <script src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/slick.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script type="text/javascript" src="js/functions.js"></script>
+
+
+  <!-- floating-cta（スクロール表示） -->
+  <script type="text/javascript">
+    $(function () {
+      var $cta = $(".floating-cta");
+      $(window)
+        .on("scroll", function () {
+          $(window).scrollTop() > 700 ? $cta.fadeIn(600) : $cta.fadeOut(600);
+        })
+        .trigger("scroll");
+    });
+  </script>
+
+
+  <!-- slick -->
+  <script>
+    $(function () {
+      $(".mv__slider").slick({
+        autoplay: true,
+        autoplaySpeed: 4000,
+        arrows: true,
+        dots: true,
+        infinite: true,
+        speed: 600,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        pauseOnHover: true,
+        pauseOnFocus: true,
+      });
+    });
+
+    function pointMeritSlider() {
+      if (window.innerWidth <= 767) {
+        if (!$(".point__merit-list").hasClass("slick-initialized")) {
+          $(".point__merit-list").slick({
+            arrows: true,
+            dots: true,
+            infinite: true,
+            speed: 600,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            adaptiveHeight: true,
+          });
+        }
+      } else {
+        if ($(".point__merit-list").hasClass("slick-initialized")) {
+          $(".point__merit-list").slick("unslick");
+        }
+      }
+    }
+
+    $(document).ready(function () {
+      pointMeritSlider();
+    });
+
+    $(window).resize(function () {
+      clearTimeout(window.resizeTimer);
+      window.resizeTimer = setTimeout(function () {
+        pointMeritSlider();
+      }, 250);
+    });
+  </script>
+
+
+  <!-- GSAP -->
+  <script>
+    window.addEventListener("load", function () {
+      gsap.registerPlugin(ScrollTrigger);
+
+      const fadeInItems = document.querySelectorAll(".animated__fadeIn");
+
+      fadeInItems.forEach((item) => {
+        ScrollTrigger.create({
+          trigger: item,
+          start: "top 70%", // 要素が上部から70%の位置で発火
+          markers: false,
+          onEnter: () => {
+            // 要素内に入ったら、js-showクラスをつける
+            item.classList.add("js-show");
+          },
+        });
+      });
+    });
+  </script>
+</body>
+</html>

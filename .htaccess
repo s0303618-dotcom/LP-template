@@ -1,0 +1,5 @@
+AuthUserFile /home/xs100990/designtesturlaaaa.com/public_html/shift/carenet/html_20260605/.htpasswd
+AuthGroupFile /dev/null
+AuthName "password required"
+AuthType Basic
+require valid-user
