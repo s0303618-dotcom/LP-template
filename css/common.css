@@ -154,6 +154,9 @@ button {
 html {
   overflow-x: hidden;
 }
+html.is-modal-open {
+  overflow: hidden;
+}
 img {
   max-width: 100%;
   height: auto;

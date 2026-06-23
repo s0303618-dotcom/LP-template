@@ -72,24 +72,60 @@ $(function () {
 $(function () {
   var $pcModal = $("#pc-modal-menu");
   var $spModal = $("#sp-modal-menu");
+  var scrollY = 0;
 
   function activeModal() {
     return window.innerWidth > 767 ? $pcModal : $spModal;
   }
 
+  function lockScroll() {
+    scrollY = window.scrollY || window.pageYOffset;
+    $("html").addClass("is-modal-open");
+    $("body").css({
+      position: "fixed",
+      top: -scrollY + "px",
+      left: 0,
+      right: 0,
+      width: "100%",
+    });
+  }
+
+  function unlockScroll() {
+    if (!$("html").hasClass("is-modal-open")) return;
+    $("html").removeClass("is-modal-open");
+    $("body").css({
+      position: "",
+      top: "",
+      left: "",
+      right: "",
+      width: "",
+    });
+    window.scrollTo(0, scrollY);
+  }
+
+  function openModal($modal) {
+    lockScroll();
+    $modal.fadeIn();
+  }
+
+  function closeModal($modal) {
+    $modal.fadeOut();
+    unlockScroll();
+  }
+
   $(".menu-open").on("click", function () {
-    activeModal().fadeIn();
+    openModal(activeModal());
   });
 
   $("#pc-modal-menu .closebtn").on("click", function () {
-    $pcModal.fadeOut();
+    closeModal($pcModal);
   });
 
   $("#sp-modal-menu .closebtn").on("click", function () {
-    $spModal.fadeOut();
+    closeModal($spModal);
   });
 
   $("#pc-modal-menu a, #sp-modal-menu a").on("click", function () {
-    activeModal().fadeOut();
+    closeModal(activeModal());
   });
 });
