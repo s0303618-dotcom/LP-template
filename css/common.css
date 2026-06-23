@@ -429,7 +429,7 @@ o
     z-index: 999;
     overflow: auto;
     box-sizing: border-box;
-    background: rgba(0, 0, 0, 1);
+    background: #222;
   }
   #pc-modal-menu .pc-modal-menu__head {
     display: flex;
@@ -650,7 +650,7 @@ o
     height: 100dvh;
     overflow-x: hidden;
     overflow-y: auto;
-    background: rgba(0, 0, 0, 0.9);
+    background: #222;
     z-index: 999;
   }
   #sp-modal-menu .logo {
